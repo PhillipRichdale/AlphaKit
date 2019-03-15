@@ -1,0 +1,82 @@
+@import _style-vars.sass
+
+div.container
+  width: 100%
+  margin: 0 -20px 0 -20px
+  padding: 0 -20px 0 20px
+div.purespace
+  margin: 0 0 0 20px
+img#loadspinner
+  margin: 0 $dellaLineMargin 0 0
+  padding: 0
+  width: $spinner-size
+  height: $spinner-size
+  min-width: $spinner-size
+  min-height: $spinner-size
+  max-width: $spinner-size
+  max-height: $spinner-size
+  vertical-align: middle
+  float: right
+img#AlphaKit-Logo
+  vertical-align: top
+  height: 60%
+  width: 60%
+  margin: auto
+h1 
+  width: 50%
+  min-height: 40px
+  margin: 20px auto 0 0
+
+div.container ul 
+  margin: 10px 15px 0 0
+  display: flex
+  flex-direction: column-reverse
+
+div.container ul li 
+  background-color: white
+  padding: 3px 3px 3px 6px
+  border: #e3e3e3 1px solid
+  border-radius: 3px
+
+div#alphakit-content
+  width: 100%
+  padding: 0
+
+div.pure-g
+  width: 100%
+  margin-right: -20px
+
+.besonders 
+  color: orangered
+
+.entity-title
+  background: $orange
+  color: white
+  padding: -5px 0 -5px 0
+  border-radius: $outerCorner 0 0 0
+
+.entity-title p, .entity-refreshing p
+  margin: $dellaLineMargin $dellaLineMargin $dellaLineMargin 2*$dellaLineMargin
+
+.entity-refreshing
+  background: $orange
+  color: white
+  padding: 0 0 0 0
+  border-radius: 0 $outerCorner 0 0
+  img
+    filter: brightness(3)
+.entity-bottom
+  background: $green
+  border-radius: 0 0 $outerCorner $outerCorner
+.green-bg
+  background: $green
+
+.palegreen-bg
+  background: $palegreen
+
+div#editor 
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
