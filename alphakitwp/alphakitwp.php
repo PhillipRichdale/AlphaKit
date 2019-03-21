@@ -85,13 +85,13 @@ function AlphaKit_menu()
  */
 function AlphaKit_show_options()
 {
-	add_action('admin_enqueue_scripts', 'AlphaKit_load_frontend_scripts');
-	// wp_register_style( string $handle, string $src
-	wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
-	wp_enqueue_style( 'pure' );
-	wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-	wp_enqueue_style( 'alphastyle' );
-	include_once "alphaKitUi.php";
+    add_action('admin_enqueue_scripts', 'AlphaKit_load_frontend_scripts');
+    // wp_register_style( string $handle, string $src
+    wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
+    wp_enqueue_style( 'pure' );
+    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
+    wp_enqueue_style( 'alphastyle' );
+    include_once "alphaKitUi.php";
 }
 
 /**
@@ -143,7 +143,6 @@ function AlphaKit_load_frontend_scripts()
 }
 
 
-
 /**
  * Searches WP posts by slug, returns a WP post object or an array of WP post objects or null, which validates to false
  *
@@ -159,10 +158,12 @@ function AlphaKit_getPostBySlug($postName)
     return $post ? get_post($post) : null;
 }
 
-add_action('wp_default_scripts', function ($scripts) {
-	if (!empty($scripts->registered['jquery'])) {
-		$scripts->registered['jquery']->deps = array_diff($scripts->registered['jquery']->deps, ['jquery-migrate']);
-	}
+add_action('wp_default_scripts', function ($scripts)
+{
+    if (!empty($scripts->registered['jquery']))
+    {
+        $scripts->registered['jquery']->deps = array_diff($scripts->registered['jquery']->deps, ['jquery-migrate']);
+    }
 });
 
 require_once "filelist/AlphaKit_FileList_GenerateShellScripts.php";
