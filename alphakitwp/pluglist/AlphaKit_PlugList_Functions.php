@@ -164,23 +164,28 @@
                 "username" => $username,
                 "password" => $password
         );
-        update_option($optionKey, );
+        update_option($optionKey, $installGroup);
     }
 
-    function AlphaKit_PlugList_getRemoteData($wpRootUrl, $username, $password)
+    function AlphaKit_PlugList_getRemoteData($wpRootUrl = false, $username = false, $password = false)
     {
-        return json_decode(
-            file_get_contents(
-                "$wpRootUrl/wp-content/plugins/alphakitwp/pluglist/pluglist.json",
-                false,
-                stream_context_create([
-                    "http" => [
-                        "header" => "Authorization: Basic ".
-                            base64_encode("$username:$password")
-                    ]
-                ])
-            ),
-        true);
+    	if ($wpRootUrl && $username && $password)
+	{
+		return json_decode(
+		    file_get_contents(
+			"$wpRootUrl/wp-content/plugins/alphakitwp/pluglist/pluglist.json",
+			false,
+			stream_context_create([
+			    "http" => [
+				"header" => "Authorization: Basic ".
+				    base64_encode("$username:$password")
+			    ]
+			])
+		    ),
+		true);
+	} else {
+            return array();
+        }
     }
 
     function AlphaKit_PlugList_writeJsonList()

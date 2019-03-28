@@ -15,6 +15,8 @@ function AlphaKit_PlugList_genTotalView()
 {
     $installation = AlphaKit_PlugList_getInstallation();
     $localList = false;
+    $liveList = array();
+
     if ("staging" != $installation)
     {
         $stagingList = AlphaKit_PlugList_getRemoteData();
@@ -24,7 +26,7 @@ function AlphaKit_PlugList_genTotalView()
     //var_dump($stagingList);exit();
     if ("live" != $installation)
     {
-        $liveList = AlphaKit_PlugList_getDataLive();
+        //$liveList = AlphaKit_PlugList_getDataLive();
     } else {
         $liveList = AlphaKit_PlugList_getPlList();
     }
