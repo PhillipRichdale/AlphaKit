@@ -139,7 +139,7 @@ function AlphaKit_show_pluglist()
  */
 function AlphaKit_load_frontend_scripts()
 {
-	wp_enqueue_script('alphakit_js', plugins_url()."/alphakitwp/client.js");
+	wp_enqueue_script('alphakit_js', plugins_url()."/alphakitwp/client.js", ['wp-element'], time(), true);
 }
 
 
@@ -165,6 +165,7 @@ add_action('wp_default_scripts', function ($scripts)
         $scripts->registered['jquery']->deps = array_diff($scripts->registered['jquery']->deps, ['jquery-migrate']);
     }
 });
+
 
 require_once "filelist/AlphaKit_FileList_GenerateShellScripts.php";
 require_once "filelist/AlphaKit_FileList.php";

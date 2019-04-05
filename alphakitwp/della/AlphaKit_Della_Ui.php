@@ -24,9 +24,12 @@
                     />
                 </p>
             </div>
-            <div class="pure-u-5-5 entity-bottom">
-                &nbsp;
-            </div>
+	    <div class="pure-u-5-5 entity-bottom">
+			&nbsp;
+	    </div>
+	    <div id="react-test" class="pure-u-5-5 react-test">
+			&nbsp;
+	    </div>
         </div>
     </div>
     <?php
