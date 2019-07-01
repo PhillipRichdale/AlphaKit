@@ -115,7 +115,7 @@ function AlphaKit_show_filelist()
     wp_enqueue_style( 'pure' );
     wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
     wp_enqueue_style( 'alphastyle' );
-    include_once "filelist/AlphaKit_FileList.php";
+    //include_once "filelist/AlphaKit_FileList_Ui.php";
     AlphaKit_FileList_show_options();
 }
 
@@ -124,12 +124,25 @@ function AlphaKit_show_filelist()
  */
 function AlphaKit_show_pluglist()
 {
-    wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
-    wp_enqueue_style( 'pure' );
-    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-    wp_enqueue_style( 'alphastyle' );
-    include_once "pluglist/AlphaKit_PlugList.php";
-    AlphaKit_PlugList_genTotalView();
+	wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
+	wp_enqueue_style( 'pure' );
+	wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
+	wp_enqueue_style( 'alphastyle' );
+	include_once "pluglist/AlphaKit_PlugList.php";
+	AlphaKit_PlugList_genTotalView();
+}
+
+/**
+ *
+ */
+function AlphaKit_show_dbmanager()
+{
+	wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
+	wp_enqueue_style( 'pure' );
+	wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
+	wp_enqueue_style( 'alphastyle' );
+	include_once "pluglist/AlphaKit_PlugList.php";
+	AlphaKit_PlugList_genTotalView();
 }
 
 /**

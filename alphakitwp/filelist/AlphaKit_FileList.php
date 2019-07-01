@@ -1,18 +1,4 @@
 <?php
-/**
-add_action('admin_menu', 'alphakit_filelist_menu');
-
-function alphakit_filelist_menu()
-{
-    add_options_page(
-        'AlphaKit Filelister',
-        'AlphaKit Filelister',
-        'manage_options',
-        'alphakit_filelister-plugin',
-        'alphakit_filelister_show_options'
-    );
-}
-**/
 
 if (!defined('ABSPATH')) die;
 
@@ -107,7 +93,7 @@ function AlphaKit_FileList_show_options()
                 <div class="pure-u-5-5">
                     <h1>AlphaKit FileList</h1>
                     <p>
-                        Generates a shellscript to download all files in the WordPress <code>uploads</code> directory using <code>curl</code>.
+                        Generates a shellscript to download all files in the WordPress <code>uploads</code> directory using <code>curl</code>.<br />
                         The generated sh/curl script checks for existing files and only downloads those that haven't been downloaded yet.
                         <br />
                         <a id="curlButton" class="thisButton" href="<?=$fileUrl;?>" download>Download curl shellscript here.</a>
