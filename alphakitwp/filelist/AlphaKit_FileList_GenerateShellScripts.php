@@ -1,13 +1,14 @@
 <?php
 
-if (!defined('ABSPATH')) die;
+if (!defined('ABSPATH')) {
+    die;
+}
 
 function generateShellScripts()
 {
-    if (is_dir($_SERVER['DOCUMENT_ROOT']."/wp-content/uploads"))
-    {
+    if (is_dir($_SERVER['DOCUMENT_ROOT']."/wp-content/uploads")) {
         $uploadDir = $_SERVER['DOCUMENT_ROOT']."/wp-content/uploads";
-    } else if (is_dir( "../../uploads")) {
+    } elseif (is_dir("../../uploads")) {
         $uploadDir = "../../uploads";
     } else {
         echo "AlphaKit says: curl shellscript generation error -> WP uploads directory not found.";

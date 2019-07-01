@@ -1,5 +1,7 @@
 <?php
-    if (!defined('ABSPATH')) die;
+    if (!defined('ABSPATH')) {
+        die;
+    }
 
     $datatypes['tinyint']['description'] = "8-bit Integer";
     $datatypes['tinyint']['command'] = "TINYINT";

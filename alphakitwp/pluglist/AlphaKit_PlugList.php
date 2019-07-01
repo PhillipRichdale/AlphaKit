@@ -1,13 +1,15 @@
 <?php
 
-if (!defined('ABSPATH')) die;
+if (!defined('ABSPATH')) {
+    die;
+}
 
 require_once __DIR__ . "/../classes/AlphaKit.php";
 global $AlphaKit;
 global $wpdb;
 $AlphaKit = new \AlphaKit\AlphaKit($wpdb);
 
-add_action( 'network_admin_menu', 'AlphaKit_PlugList_menu');
+add_action('network_admin_menu', 'AlphaKit_PlugList_menu');
 require_once "AlphaKit_PlugList_Functions.php";
 
 
@@ -17,22 +19,19 @@ function AlphaKit_PlugList_genTotalView()
     $localList = false;
     $liveList = array();
 
-    if ("staging" != $installation)
-    {
+    if ("staging" != $installation) {
         $stagingList = AlphaKit_PlugList_getRemoteData();
     } else {
         $stagingList = AlphaKit_PlugList_getPlList();
     }
     //var_dump($stagingList);exit();
-    if ("live" != $installation)
-    {
+    if ("live" != $installation) {
         //$liveList = AlphaKit_PlugList_getDataLive();
     } else {
         $liveList = AlphaKit_PlugList_getPlList();
     }
 
-    if ("local" == $installation)
-    {
+    if ("local" == $installation) {
         $localList = AlphaKit_PlugList_getPlList();
     }
 
@@ -44,46 +43,37 @@ function AlphaKit_PlugList_genTotalView()
     $nameKeys = array();
 
     //add *all* plugins to the namelist:
-    foreach ($liveList as $nameKey => $items)
-    {
+    foreach ($liveList as $nameKey => $items) {
         $nameKeys[$nameKey] = $items["name"];
     }
-    foreach ($stagingList as $nameKey => $items)
-    {
+    foreach ($stagingList as $nameKey => $items) {
         $nameKeys[$nameKey] = $items["name"];
     }
-    if ($localList)
-    {
-        foreach ($localList as $nameKey => $items)
-        {
+    if ($localList) {
+        foreach ($localList as $nameKey => $items) {
             $nameKeys[$nameKey] = $items["name"];
         }
     }
 
     ksort($nameKeys);
     //sorted assembly of li lists by complete nameKey array:
-    foreach ($nameKeys as $nameKey => $pName)
-    {
+    foreach ($nameKeys as $nameKey => $pName) {
         $nameList .= "<li><span class='pname'>".$pName."&#8203;</span></li>\n";
 
         $liveVersion = false;
         $stagingVersion = false;
-        if (isset($liveList[$nameKey]))
-        {
+        if (isset($liveList[$nameKey])) {
             $liveVersion = $liveList[$nameKey]["version"];
             $liveVernumList .= "<li><span class='pversion'>&#8203;".$liveList[$nameKey]["version"]."</span></li>\n";
         } else {
             $liveVernumList .= "<li><span class='pversion notThere'>x&#8203;</span></li>\n";
         }
 
-        if (isset($stagingList[$nameKey]))
-        {
+        if (isset($stagingList[$nameKey])) {
             $offsync = "";
             $stagingVersion = $stagingList[$nameKey]["version"];
-            if ($liveVersion)
-            {
-                if ($liveVersion != $stagingList[$nameKey]["version"])
-                {
+            if ($liveVersion) {
+                if ($liveVersion != $stagingList[$nameKey]["version"]) {
                     $offsync = "offsync";
                 }
             }
@@ -92,19 +82,14 @@ function AlphaKit_PlugList_genTotalView()
             $stagingVernumList .= "<li><span class='pversion notThere'>x&#8203;</span></li>\n";
         }
 
-        if (isset($localList[$nameKey]))
-        {
+        if (isset($localList[$nameKey])) {
             $offsync = "";
-            if ($liveVersion)
-            {
-                if ($liveVersion != $localList[$nameKey]["version"])
-                {
+            if ($liveVersion) {
+                if ($liveVersion != $localList[$nameKey]["version"]) {
                     $offsync = "offsync";
                 }
-                if ($stagingVersion)
-                {
-                    if ($stagingVersion != $localList[$nameKey]["version"])
-                    {
+                if ($stagingVersion) {
+                    if ($stagingVersion != $localList[$nameKey]["version"]) {
                         $offsync = "offsync offsyncOfStage";
                     }
                 }
@@ -119,8 +104,7 @@ function AlphaKit_PlugList_genTotalView()
         ,
         "staging" => $stagingVernumList
     );
-    if ($localList)
-    {
+    if ($localList) {
         $lists['local'] = $localVernumList;
     }
     $lists["names"] = $nameList;
@@ -130,8 +114,7 @@ function AlphaKit_PlugList_show_options()
 {
     AlphaKit_PlugList_writeJsonList();
 
-    $lists = AlphaKit_PlugList_genTotalView();
-    ?>
+    $lists = AlphaKit_PlugList_genTotalView(); ?>
     <style>
         div.container {
             width: 100%;
@@ -207,58 +190,51 @@ function AlphaKit_PlugList_show_options()
         <div class="apList_Names">
             <h2>Plugins</h2>
             <ul>
-                <?=$lists["names"];?>
+                <?=$lists["names"]; ?>
             </ul>
         </div>
     <?php
-        if (isset($lists["live"]))
-        {
-            if (strlen($lists["live"]) > 0)
-            {
+        if (isset($lists["live"])) {
+            if (strlen($lists["live"]) > 0) {
                 ?>
                 <div class="apList_Vernums">
                     <h2>Live</h2>
                     <ul>
-                        <?=$lists["live"];?>
+                        <?=$lists["live"]; ?>
                     </ul>
                 </div>
                 <?php
             }
         }
 
-        if (isset($lists["staging"]))
-        {
-            if (strlen($lists["staging"]) > 0)
-            {
-                ?>
+    if (isset($lists["staging"])) {
+        if (strlen($lists["staging"]) > 0) {
+            ?>
                 <div class="apList_Vernums">
                     <h2>Staging</h2>
                     <ul>
-                        <?=$lists["staging"];?>
+                        <?=$lists["staging"]; ?>
                     </ul>
                 </div>
                 <?php
-            }
         }
+    }
 
-        if (isset($lists["local"]))
-        {
-            if (strlen($lists["local"]) > 0)
-            {
-                ?>
+    if (isset($lists["local"])) {
+        if (strlen($lists["local"]) > 0) {
+            ?>
                 <div class="apList_Vernums">
                     <h2>Local</h2>
                     <ul>
-                        <?=$lists["local"];?>
+                        <?=$lists["local"]; ?>
                     </ul>
                 </div>
                 <?php
-            }
         }
-    ?>
+    } ?>
     </div><!-- container -->
     <?php
 }
 
 add_action('pre_current_active_plugins', 'AlphaKit_PlugList_hideme');
-add_shortcode( 'AlphaKit_PlugList_write_json_list', 'AlphaKit_PlugList_writeJsonList');
+add_shortcode('AlphaKit_PlugList_write_json_list', 'AlphaKit_PlugList_writeJsonList');

@@ -1,12 +1,13 @@
 <?php
 
-    if (!defined('ABSPATH')) die;
+    if (!defined('ABSPATH')) {
+        die;
+    }
 
     function AlphaKit_PlugList_menu_AUTH()
     {
         $current_user = wp_get_current_user();
-        if ("richdale" == trim(strtolower($current_user->display_name)))
-        {
+        if ("richdale" == trim(strtolower($current_user->display_name))) {
             add_menu_page(
                 "apLister",
                 "apLister",
@@ -56,8 +57,7 @@
             "&" => "+",
             '"' => "_"
         ];
-        foreach ($srArray as $search => $replace)
-        {
+        foreach ($srArray as $search => $replace) {
             $returnMe = str_replace($search, $replace, $returnMe);
         }
         return $returnMe;
@@ -98,9 +98,9 @@
 
         if (strpos($homeUrl, "-stage") !== false) {
             return "staging";
-        } else if (strpos($homeUrl, ".local") !== false) {
+        } elseif (strpos($homeUrl, ".local") !== false) {
             return "local";
-        } else if (strpos($homeUrl, ".de") !== false) {
+        } elseif (strpos($homeUrl, ".de") !== false) {
             return "live";
         } else {
             return false;
@@ -117,14 +117,13 @@
         $plugins = get_plugins();
 
         $listDataArray = array();
-        foreach ($plugins as $plugin)
-        {
+        foreach ($plugins as $plugin) {
             // if ("aplister" != $plugin["Name"])
             // {
-                $versionNum = strlen($plugin["Version"]) > 0 ? $plugin["Version"] : "-";
+            $versionNum = strlen($plugin["Version"]) > 0 ? $plugin["Version"] : "-";
 
-                $listDataArray[AlphaKit_PlugList_slugify($plugin["Name"])]['name'] = $plugin["Name"];
-                $listDataArray[AlphaKit_PlugList_slugify($plugin["Name"])]['version'] = $versionNum;
+            $listDataArray[AlphaKit_PlugList_slugify($plugin["Name"])]['name'] = $plugin["Name"];
+            $listDataArray[AlphaKit_PlugList_slugify($plugin["Name"])]['version'] = $versionNum;
             // }
         }
         return $listDataArray;
@@ -133,8 +132,7 @@
     function AlphaKit_PlugList_genNameList($array, $baseKey)
     {
         $nameList = "";
-        foreach ($array as $keyName => $entry)
-        {
+        foreach ($array as $keyName => $entry) {
             $nameList .= "<li><span class='pname'>".$entry[$baseKey]["name"]."</span></li>\n";
         }
         return $nameList;
@@ -143,8 +141,7 @@
     function AlphaKit_PlugList_genVersionList($array, $baseKey)
     {
         $versionList = "";
-        foreach ($array as $keyName => $entry)
-        {
+        foreach ($array as $keyName => $entry) {
             $versionList .= "<li><span class='pversion'>".$entry[$baseKey]["version"]."&#8203;</span></li>\n";
         }
         return $versionList;
@@ -153,8 +150,7 @@
     function AlphaKit_PlugList_addRemote($projectKey, $installationName, $wpRootUrl, $username, $password)
     {
         $optionKey = "AlphaKit_Installgroup";
-        if (!$installGroup = get_option($optionKey))
-        {
+        if (!$installGroup = get_option($optionKey)) {
             $installGroup = array();
         }
         $installGroup[] =  array(
@@ -169,21 +165,21 @@
 
     function AlphaKit_PlugList_getRemoteData($wpRootUrl = false, $username = false, $password = false)
     {
-    	if ($wpRootUrl && $username && $password)
-	{
-		return json_decode(
-		    file_get_contents(
-			"$wpRootUrl/wp-content/plugins/alphakitwp/pluglist/pluglist.json",
-			false,
-			stream_context_create([
-			    "http" => [
-				"header" => "Authorization: Basic ".
-				    base64_encode("$username:$password")
-			    ]
-			])
-		    ),
-		true);
-	} else {
+        if ($wpRootUrl && $username && $password) {
+            return json_decode(
+            file_get_contents(
+                "$wpRootUrl/wp-content/plugins/alphakitwp/pluglist/pluglist.json",
+                false,
+                stream_context_create([
+                "http" => [
+                "header" => "Authorization: Basic ".
+                    base64_encode("$username:$password")
+                ]
+            ])
+            ),
+            true
+        );
+        } else {
             return array();
         }
     }
@@ -191,8 +187,7 @@
     function AlphaKit_PlugList_writeJsonList()
     {
         $aplist = json_encode(AlphaKit_PlugList_getPlList());
-        if (AlphaKit_PlugList_isLive())
-        {
+        if (AlphaKit_PlugList_isLive()) {
             return boolval(file_put_contents(__DIR__."/pluglist.json", $aplist));
         } else {
             return boolval(file_put_contents(__DIR__."/pluglist.json", $aplist));
@@ -205,7 +200,7 @@
         global $wpdb;
         $post = $wpdb->get_var($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE postName = %s", $postName));
 
-        return $post ? get_post($post) : NULL;
+        return $post ? get_post($post) : null;
     }
     function AlphaKit_PlugList_hideme()
     {

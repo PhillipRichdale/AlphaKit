@@ -24,13 +24,15 @@ class AlphaKitPict
      */
     public static function getInstance()
     {
-        if ( ! isset(self::$_instance)) {
+        if (! isset(self::$_instance)) {
             self::$_instance = new self();
         }
         return self::$_instance;
     }
 
-    public function __construct(){}
+    public function __construct()
+    {
+    }
 
     public function get()
     {

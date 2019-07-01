@@ -5,7 +5,7 @@
      * Diese Klasse öffnet und iteriert über eine CSV Datei (der Trenner ','
      * ist als Vorgabe eingestellt) und führt für jede enthaltene Zeile eine übergebene
      * Callbackfunktion mit der Zeile als Parameter aus.
-     * 
+     *
      * The passed parameter for the callback function is an assoc-array with column-names
      * as key accompanied by its value. The first line of entries in the CSV file is
      * automatically intepreted as column names.
@@ -15,7 +15,7 @@
      * Sekunden als Zahl als dritter Parameter übergeben werden. Der
      * Standardwert für die Verzögerung ist 12 Sekunden. Wird delay auf
      * 'false' gesetzt, findet keine Verzögerung statt.
-     * 
+     *
      * Data Error Handling
      * The iterator automatically skips lines that do not have the correct/fitting number of fields. Each skip is counted as a data-error. At the the end of a complete file iteration the class returns the amount of iterated lines and the amount of dataerrors as a message (string),
      */
@@ -48,19 +48,17 @@
             $this->delay = $delay;
         }
         public function iterateCsvFile($csvFile)
-        {    
+        {
             $this->openFile($csvFile);
             
             $count = 0;
             $this->datasetCount = 0;
             
-            while($importLine = $this->getImportLine())
-            {
+            while ($importLine = $this->getImportLine()) {
                 call_user_func($this->callback, $importLine);
                 $count++;
                 $this->datasetCount++;
-                if ($this->delay)
-                {
+                if ($this->delay) {
                     sleep($this->delay);
                 }
             }
@@ -72,7 +70,7 @@
         }
         private function openFile($filename)
         {
-            $this->csvFile = fopen($filename ,"r");
+            $this->csvFile = fopen($filename, "r");
             
             #First line is field/attributenames:
             $getLine = fgets($this->csvFile);
@@ -80,8 +78,7 @@
             // Whitespaces kann appear in columnnames in dirty CSV data.
             // These are removed.
             $fNames = explode($this->seperator, $getLine);
-            foreach($fNames as $fName)
-            {
+            foreach ($fNames as $fName) {
                 $this->fileFieldNames[] = trim(str_replace('"', '', $fName));
             }
             
@@ -95,10 +92,8 @@
             $lineArray = array();
             $thisLine = $this->getValidFileLine();
             
-            if(is_array($thisLine))
-            {
-                for($i = 0; $i < $this->fileFieldNameCount; $i++)
-                {
+            if (is_array($thisLine)) {
+                for ($i = 0; $i < $this->fileFieldNameCount; $i++) {
                     $lineArray[$this->fileFieldNames[$i]] = $thisLine[$i];
                 }
             } else {
@@ -109,8 +104,7 @@
         private function getValidFileLine()
         {
             $getLine = fgets($this->csvFile);
-            if(false != $getLine)
-            {
+            if (false != $getLine) {
                 return explode($this->seperator, $getLine);
             } else {
                 return false;

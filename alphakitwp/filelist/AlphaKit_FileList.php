@@ -1,6 +1,8 @@
 <?php
 
-if (!defined('ABSPATH')) die;
+if (!defined('ABSPATH')) {
+    die;
+}
 
 function AlphaKit_FileList_show_options()
 {
@@ -12,9 +14,7 @@ function AlphaKit_FileList_show_options()
     $wgetFileUrl = "http://" . $_SERVER['SERVER_NAME'] . "/wp-content/uploads/wget-media-dl.bash";
 
     //Not good. Slow for huge uploads directories. This needs replacing with some true Ajax call thing:
-    generateShellScripts();
-    
-    ?>
+    generateShellScripts(); ?>
     <script>
         var spinnerCount = 0;
         var degrees = 0;
@@ -96,7 +96,7 @@ function AlphaKit_FileList_show_options()
                         Generates a shellscript to download all files in the WordPress <code>uploads</code> directory using <code>curl</code>.<br />
                         The generated sh/curl script checks for existing files and only downloads those that haven't been downloaded yet.
                         <br />
-                        <a id="curlButton" class="thisButton" href="<?=$fileUrl;?>" download>Download curl shellscript here.</a>
+                        <a id="curlButton" class="thisButton" href="<?=$fileUrl; ?>" download>Download curl shellscript here.</a>
                         <br />
                         ATTENTION: Execute in <u><b><i>*WordPress ROOT*</i></b></u> with <code>sh curl-media-dl.bash</code>.<br />
                         <code>curl</code> - of course - needs to be present.<br />

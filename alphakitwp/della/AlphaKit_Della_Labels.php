@@ -3,7 +3,9 @@
 //0-1, 0-*, 1, 1-* for hasZeroOrOne farEntities:
 //0-* for hasZeroToMany farEntities in templateentity
 
-if (!defined('ABSPATH')) die;
+if (!defined('ABSPATH')) {
+    die;
+}
 
 function getEnglishArray()
 {
@@ -65,17 +67,17 @@ function getGermanArray()
     $english['MigrateDbToUtf8'] = "DB zu UTF-8 migrieren";
     $english['GenerateTestData'] = "Testdaten generieren";
     $english['SortDatatypesInDropdownsBy'] = "Datatypen in Dropdowns sortieren nach:";
-    	$english['IntendedTypeToUse'] = "beabsichtigte Verwendung";
-    	$english['MeanSize'] = "mittlere Größe";
-    	$english['Alphabetical'] = "alphabetisch";
+    $english['IntendedTypeToUse'] = "beabsichtigte Verwendung";
+    $english['MeanSize'] = "mittlere Größe";
+    $english['Alphabetical'] = "alphabetisch";
     $english['SortEntitiesBy'] = "Sortiere Entities nach:";
-    	$english['AssociationAlphabetical'] = "Assozitation + alphabethisch";
-    	$english['ApplicationAreasAlphabetical'] = "A ";
-    	$english['SortAttributesBy'] = "Sort Attributes by";
-    	$english['Type'] = "Type";
-    	$english['Size'] = "Size";
-    	$english['Alphabetical'] = "Alphabetical";
-    	$english['AsStoredInDb'] = "as stored in DB (ready for Drag & Drop rearranging)";
+    $english['AssociationAlphabetical'] = "Assozitation + alphabethisch";
+    $english['ApplicationAreasAlphabetical'] = "A ";
+    $english['SortAttributesBy'] = "Sort Attributes by";
+    $english['Type'] = "Type";
+    $english['Size'] = "Size";
+    $english['Alphabetical'] = "Alphabetical";
+    $english['AsStoredInDb'] = "as stored in DB (ready for Drag & Drop rearranging)";
     $english['Linkage'] = "Linkage";
 
     $english['Sort'] = "Sort";
@@ -113,4 +115,3 @@ function getGermanArray()
     $english[''] = "";
     return $english;
 }
-

@@ -1,5 +1,7 @@
 <?php
-if (!defined('ABSPATH')) die;
+if (!defined('ABSPATH')) {
+    die;
+}
 ?>
 
 <script>
@@ -9,8 +11,8 @@ if (!defined('ABSPATH')) die;
 <div class="container">
 	<div class="purespace" id="purespace">
 		<?php
-		?>
+        ?>
 	</div>
 	<?php
-	?>
+    ?>
 </div><!-- container -->
