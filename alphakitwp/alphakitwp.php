@@ -88,11 +88,7 @@ function AlphaKit_menu()
 function AlphaKit_show_options()
 {
     add_action('admin_enqueue_scripts', 'AlphaKit_load_frontend_scripts');
-    // wp_register_style( string $handle, string $src
-    wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
-    wp_enqueue_style('pure');
-    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-    wp_enqueue_style('alphastyle');
+    AlphaKit_setDashboardStyle();
     include_once "alphaKitUi.php";
 }
 
@@ -101,12 +97,7 @@ function AlphaKit_show_options()
  */
 function AlphaKit_show_della()
 {
-    wp_register_style("bootstrap", plugins_url()."/alphakitwp/bootstrap/bootstrap.min.css");
-    wp_enqueue_style('bootstrap');
-    wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
-    wp_enqueue_style('pure');
-    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-    wp_enqueue_style('alphastyle');
+    AlphaKit_setDashboardStyle();
     include_once "della/AlphaKit_Della_Ui.php";
 }
 
@@ -115,10 +106,7 @@ function AlphaKit_show_della()
  */
 function AlphaKit_show_filelist()
 {
-    wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
-    wp_enqueue_style('pure');
-    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-    wp_enqueue_style('alphastyle');
+    AlphaKit_setDashboardStyle();
     //include_once "filelist/AlphaKit_FileList_Ui.php";
     AlphaKit_FileList_show_options();
 }
@@ -128,10 +116,7 @@ function AlphaKit_show_filelist()
  */
 function AlphaKit_show_pluglist()
 {
-    wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
-    wp_enqueue_style('pure');
-    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-    wp_enqueue_style('alphastyle');
+    AlphaKit_setDashboardStyle();
     include_once "pluglist/AlphaKit_PlugList.php";
     AlphaKit_PlugList_genTotalView();
 }
@@ -141,10 +126,7 @@ function AlphaKit_show_pluglist()
  */
 function AlphaKit_show_dbmanager()
 {
-    wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
-    wp_enqueue_style('pure');
-    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-    wp_enqueue_style('alphastyle');
+    AlphaKit_setDashboardStyle();
     include_once "pluglist/AlphaKit_PlugList.php";
     AlphaKit_PlugList_genTotalView();
 }
@@ -159,6 +141,13 @@ function AlphaKit_load_frontend_scripts()
     wp_enqueue_script('alphakit_js', plugins_url()."/alphakitwp/client.js", ['wp-element'], time(), true);
 }
 
+function AlphaKit_setDashboardStyle()
+{
+    wp_register_style("bootstrap", plugins_url()."/alphakitwp/bootstrap/bootstrap.min.css");
+    wp_enqueue_style('bootstrap');
+    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
+    wp_enqueue_style('alphastyle');
+}
 
 /**
  * Searches WP posts by slug, returns a WP post object or an array of WP post objects or null, which validates to false
