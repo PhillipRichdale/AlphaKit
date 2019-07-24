@@ -101,6 +101,8 @@ function AlphaKit_show_options()
  */
 function AlphaKit_show_della()
 {
+    wp_register_style("bootstrap", plugins_url()."/alphakitwp/bootstrap/bootstrap.min.css");
+    wp_enqueue_style('bootstrap');
     wp_register_style("pure", plugins_url()."/alphakitwp/pure-min.css");
     wp_enqueue_style('pure');
     wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");

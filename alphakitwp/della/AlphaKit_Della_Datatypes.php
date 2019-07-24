@@ -67,8 +67,8 @@
     $datatypes['tinytext']['unsignedrange'] = 255;
     $datatypes['tinytext']['defaultoptions'] = false;
 
-    $datatypes['text']['description'] = "255 character string";
-    $datatypes['text']['command'] = "TINYTEXT";
+    $datatypes['text']['description'] = "65535  character string";
+    $datatypes['text']['command'] = "TEXT";
     $datatypes['text']['option'] = false;
     $datatypes['text']['bytesize'] = false;
     $datatypes['text']['unsignedrange'] = 65536;
