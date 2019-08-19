@@ -104,6 +104,15 @@ function AlphaKit_show_della()
 /**
  *
  */
+function AlphaKit_show_cptmaker()
+{
+    AlphaKit_setDashboardStyle();
+    include_once "cptmaker/AlphaKit_CptMaker_Ui.php";
+}
+
+/**
+ *
+ */
 function AlphaKit_show_filelist()
 {
     AlphaKit_setDashboardStyle();
