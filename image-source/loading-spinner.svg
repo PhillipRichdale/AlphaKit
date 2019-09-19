@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="200mm"
+   height="200mm"
+   viewBox="0 0 200 200"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="loading-spinner.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-264.28571"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1046"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="star">
+    <path
+       sodipodi:type="star"
+       style="fill:#ff0000;stroke-width:0.20490287"
+       id="path27"
+       sodipodi:sides="8"
+       sodipodi:cx="100"
+       sodipodi:cy="100"
+       sodipodi:r1="77.942284"
+       sodipodi:r2="38.971142"
+       sodipodi:arg1="1.6158785"
+       sodipodi:arg2="2.0085776"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 96.487383,177.86309 83.478924,135.29595 42.458684,152.57372 63.359831,113.27584 22.136908,96.487383 64.704052,83.478924 47.426275,42.458684 86.724161,63.359831 103.51262,22.136908 l 13.00846,42.567144 41.02024,-17.277777 -20.90115,39.297886 41.22292,16.788459 -42.56714,13.00846 17.27777,41.02024 -39.29788,-20.90115 z" />
+  </g>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-97)">
+    <circle
+       style="fill:#666666;stroke-width:0.19758065"
+       id="path10"
+       cx="102.16667"
+       cy="117.7262"
+       r="17.5" />
+    <circle
+       r="15"
+       cy="167.85123"
+       cx="99.666672"
+       id="circle12"
+       style="fill:#666666;stroke-width:0.16935484" />
+    <circle
+       style="fill:#666666;stroke-width:0.14112903"
+       id="circle14"
+       cx="97.166672"
+       cy="217.97627"
+       r="12.5" />
+    <circle
+       r="10"
+       cy="262.80963"
+       cx="94.666672"
+       id="circle16"
+       style="fill:#666666;stroke-width:0.11290322" />
+    <circle
+       style="fill:#666666;stroke-width:0.08467741"
+       id="circle18"
+       cx="123.91664"
+       cy="265.30963"
+       r="7.5" />
+    <circle
+       r="5"
+       cy="267.80963"
+       cx="153.16667"
+       id="circle20"
+       style="fill:#666666;stroke-width:0.05645161" />
+    <circle
+       r="20"
+       cy="115.2262"
+       cx="51.750019"
+       id="circle22"
+       style="fill:#666666;stroke-width:0.22580646" />
+  </g>
+</svg>

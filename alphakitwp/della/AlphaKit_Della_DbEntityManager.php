@@ -1,6 +1,5 @@
 <?php
-<?
-php
+
 /**
  * Project Name: AlphaKit
  * Filename: AlphaKit_Della_DbEntityManager.php
@@ -22,6 +21,6 @@ class AlphaKit_Della_DbEntityManager
 	private function createTable()
 	{
 		$entityListName = $prefix."alphakit_della_entitylist";
-		$this->entityList
+		// $this->entityList
 	}
 }
