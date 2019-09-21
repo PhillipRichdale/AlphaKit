@@ -141,24 +141,6 @@ function AlphaKit_show_dbmanager()
 }
 
 /**
- * Adds the base AlphaKit client.js to the Dashboard scripts
- *
- * @return void
- */
-function AlphaKit_load_frontend_scripts()
-{
-    wp_enqueue_script('alphakit_js', plugins_url()."/alphakitwp/client.js", ['wp-element'], time(), true);
-}
-
-function AlphaKit_setDashboardStyle()
-{
-    wp_register_style("bootstrap", plugins_url()."/alphakitwp/bootstrap/bootstrap.min.css");
-    wp_enqueue_style('bootstrap');
-    wp_register_style("alphastyle", plugins_url()."/alphakitwp/style.css");
-    wp_enqueue_style('alphastyle');
-}
-
-/**
  * Searches WP posts by slug, returns a WP post object or an array of WP post objects or null, which validates to false
  *
  * @param string $postName The posts slug-name
@@ -182,3 +164,41 @@ add_action('wp_default_scripts', function ($scripts) {
 
 require_once "filelist/AlphaKit_FileList_GenerateShellScripts.php";
 require_once "filelist/AlphaKit_FileList.php";
+
+
+
+
+
+
+
+/**
+ * Adds the base AlphaKit 3rd Party Frontend Components to the Dashboard scripts
+ *
+ * @return void
+ */
+function AlphaKit_load_frontend_scripts()
+{
+    wp_enqueue_script('bootstrap_js', plugins_url() . "/alphakitwp/bootstrap/bootstrap.bundle.min.js");
+
+    wp_enqueue_script('jquery_js', plugins_url() . "/alphakitwp/js/jquery.min.js");
+
+    wp_enqueue_script('jquery_datatables_js', plugins_url() . "/alphakitwp/datatables/jquery.dataTables.min.js");
+    wp_enqueue_script('bootstrap_datatables_js', plugins_url() . "/alphakitwp/datatables/dataTables.bootstrap4.min.js");
+}
+
+/**
+ * Loads the Dashboard Styles for the edurate admin UI.
+ *
+ * @return void
+ */
+function AlphaKit_setDashboardStyle()
+{
+    wp_register_style("bootstrap_css", plugins_url() . "/alphakitwp/bootstrap/bootstrap.min.css");
+    wp_enqueue_style('bootstrap_css');
+
+    wp_register_style("datatables_css", plugins_url() . "/alphakitwp/datatables/dataTables.bootstrap4.min.css");
+    wp_enqueue_style('datatables_css');
+
+    wp_register_style("edurate_style", plugins_url() . "/wpeduratewp/style.css");
+    wp_enqueue_style('edurate_style');
+}
