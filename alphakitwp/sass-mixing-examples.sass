@@ -1,0 +1,44 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+// Small devices (landscape phones, 576px and up)
+// --> @media (min-width: 576px) { ... }
+// @include media-breakpoint-up(sm) { ... }
+
+
+// Medium devices (tablets, 768px and up)
+// --> @media (min-width: 768px) { ... }
+// @include media-breakpoint-up(md) { ... }
+
+
+// Large devices (desktops, 992px and up)
+// --> @media (min-width: 992px) { ... }
+// @include media-breakpoint-up(lg) { ... }
+
+
+// @include media-breakpoint-up(xl) { ... }
+// Extra large devices (large desktops, 1200px and up)
+// --> @media (min-width: 1200px) { ... }
+
+
+
+// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+.custom-class
+  display: none
+
+@include media-breakpoint-up(sm)
+  .custom-class
+    display: block
+
+
+// @include media-breakpoint-down(xs) { ... }
+// @include media-breakpoint-down(sm) { ... }
+// @include media-breakpoint-down(md) { ... }
+// @include media-breakpoint-down(lg) { ... }
+// No media query necessary for xl breakpoint as it has no upper bound on its width
+
+// Example: Style from medium breakpoint and down
+@include media-breakpoint-down(md)
+  .custom-class
+    display: block
