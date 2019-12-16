@@ -43,6 +43,10 @@ function generateShellScripts()
             (stripos($name, ".png") !== false)
             ||
             (stripos($name, ".gif") !== false)
+            ||
+            (stripos($name, ".pdf") !== false)
+            ||
+            (stripos($name, ".svg") !== false)
         ) {
             $count++;
             $relFilePath = str_replace($_SERVER['DOCUMENT_ROOT'] . "/", "", $name);
