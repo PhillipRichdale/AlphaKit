@@ -2,10 +2,12 @@ div.container {
   width: 100%;
   margin: 0 -20px 0 -20px;
   padding: 0 -20px 0 20px;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 div.purespace {
-  margin: 0 0 0 20px; }
+  margin: 0 0 0 20px;
+}
 
 img#loadspinner {
   margin: 0 4px 0 0;
@@ -17,83 +19,104 @@ img#loadspinner {
   max-width: 20px;
   max-height: 20px;
   vertical-align: middle;
-  float: right; }
+  float: right;
+}
 
 img#AlphaKit-Logo {
   vertical-align: top;
   height: 60%;
   width: 60%;
-  margin: auto; }
+  margin: auto;
+}
 
 h1 {
   width: 50%;
   min-height: 40px;
-  margin: 20px auto 0 0; }
+  margin: 20px auto 0 0;
+}
 
 div.container ul {
   margin: 10px 15px 0 0;
   display: flex;
-  flex-direction: column-reverse; }
+  flex-direction: column-reverse;
+}
 
 div.container ul li {
   background-color: white;
   padding: 3px 3px 3px 6px;
   border: #e3e3e3 1px solid;
-  border-radius: 3px; }
+  border-radius: 3px;
+}
 
 div#alphakit-content {
   width: 100%;
-  padding: 0; }
+  padding: 0;
+}
 
 div.pure-g {
   width: 100%;
-  margin-right: -20px; }
+  margin-right: -20px;
+}
 
 .besonders {
-  color: orangered; }
+  color: orangered;
+}
 
 .entity-title {
   background: #df7514;
   color: white;
   padding: -5px 0 -5px 0;
-  border-radius: 8px 0 0 0; }
+  border-radius: 3px 0 0 0;
+}
 
 .entity-title p, .entity-refreshing p, .entity-middle p {
-  margin: 4px 4px 4px 8px; }
+  margin: 4px 4px 4px 8px;
+}
 
 .entity-refreshing {
   background: #df7514;
   color: white;
   padding: 0 0 0 0;
-  border-radius: 0 8px 0 0; }
-  .entity-refreshing img {
-    filter: brightness(3); }
+  border-radius: 0 3px 0 0;
+}
+.entity-refreshing img {
+  filter: brightness(3);
+}
 
 .entity-middle {
   background: #1cb841;
   border-radius: 0;
-  color: white; }
-  .entity-middle input {
-    width: 100%;
-    min-width: 100%;
-    border-radius: 4px 4px 4px 4px;
-    margin: 4px 4px 4px 8px; }
-  .entity-middle select {
-    color: darkgrey; }
+  color: white;
+}
+.entity-middle input {
+  width: 100%;
+  min-width: 100%;
+  border-radius: 2px 2px 2px 2px;
+  margin: 4px 4px 4px 8px;
+}
+.entity-middle select {
+  color: darkgrey;
+}
 
 .entity-bottom {
   background: #1cb841;
-  border-radius: 0 0 8px 8px; }
+  border-radius: 0 0 3px 3px;
+}
 
 .green-bg {
-  background: #1cb841; }
+  background: #1cb841;
+}
 
 .palegreen-bg {
-  background: #aac8aa; }
+  background: #aac8aa;
+}
 
 div#editor {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
