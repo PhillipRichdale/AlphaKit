@@ -91,15 +91,13 @@ function AlphaKit_FileList_show_options()
         <div class="purespace" id="purespace">
             <div class="pure-g">
                 <div class="pure-u-5-5">
-                    <h1 class="wp-heading-inline">AlphaKit FileList</h1>
+                    <h1>AlphaKit FileList</h1>
                     <p>
                         Generates a shellscript to download all files in the WordPress <code>uploads</code> directory using <code>curl</code>.<br />
                         The generated sh/curl script checks for existing files and only downloads those that haven't been downloaded yet.
-                    </p>
-                    <p>
-                        <a id="curlButton" class="button button-primary" href="<?=$fileUrl; ?>" download>Download curl shellscript here.</a>
-                    </p>
-                    <p>
+                        <br />
+                        <a id="curlButton" class="thisButton" href="<?=$fileUrl; ?>" download>Download curl shellscript here.</a>
+                        <br />
                         ATTENTION: Execute in <u><b><i>*WordPress ROOT*</i></b></u> with <code>sh curl-media-dl.bash</code>.<br />
                         <code>curl</code> - of course - needs to be present.<br />
                         Install that with your package manager of choice.
