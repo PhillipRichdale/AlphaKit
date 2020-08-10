@@ -25,7 +25,7 @@ require_once "AlphaKit_Della_Datatypes.php";
                         entity-refreshing
                         <img
                             id="loadspinner"
-                            src = "<?=plugins_url()."/alphakitwp/";?>loading-spinner-grey.gif"
+                            src = "<?=plugins_url()."/../../wp-admin/images/";?>spinner.gif"
                         />
                     </p>
                 </div>

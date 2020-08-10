@@ -20,7 +20,6 @@ if (!defined('ABSPATH')) {
 					alt="AlphaKit-Logo"
 					src="<?=plugins_url()."/alphakitwp/";?>alphakit-logo-pict.svg"
 				>
-
 			</div>
 			<div class="pure-u-4-5">
 				<h1>AlphaKit Overview</h1>
